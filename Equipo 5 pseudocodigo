@@ -1,1 +1,10 @@
+Algoritmo AreaRectangulo
+	Definir Base, Altura, area como real
+	Escribir sin saltar "ingrase la base";
+	Leer Base
+	Escribir sin saltar "Ingrese la altura";
+	Leer Altura
+	area<-Base*Altura
+	Escribir area
+FinAlgoritmo
 
