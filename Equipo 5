@@ -1,1 +1,50 @@
+//Calcular el area de un rectangulo
+
+#include <iostream>
+#include <fstream> // Biblioteca necesaria para archivos
+#include <string> // Para la fecha y hora
+#include <ctime> // para time, lo
+
+using namespace std;
+
+//Funcion para obtener La fecha y hora actual
+string obtenerMarcaDeTiempo () {
+	time_t ahora = time(0);
+	char buffer[80];
+	strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%m:%S", localtime(&ahora));
+	return string(buffer);
+}
+
+int main (void)
+{
+	int base , altura , area;
+	
+	
+	cout << "introduce la base: ";
+	cin >> base;
+	cout << "introduce la altura: ";
+	cin >> altura;
+    
+    
+	area=base*altura;
+	cout << "el resultado es " << area << endl;
+
+
+//3.Registrar en el log (archivo)
+ofstream archivoLog("multiplicacion_log.txt",ios::app); //'ios::app´ añade contenido al final
+
+if (archivoLog.is_open()) {
+	
+	archivoLog<< "[" << obtenerMarcaDeTiempo() << "]"
+	
+	<< "El Resultado de la operacion:  " << base << " * " << altura 
+	<< " = " << area << endl;
+	archivoLog.close();
+} else {
+	cerr << "Error: No se pudo abrir el archivo de log." << endl;
+}
+	
+	return 0;
+}
+
 
