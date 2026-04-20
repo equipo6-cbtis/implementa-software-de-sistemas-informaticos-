@@ -1,1 +1,12 @@
+Algoritmo Multiplicacionde3num
+	Definir num1, num2, num3, area Como Real
+	Escribir 'ingrasar primer numero'Sin Saltar
+	Leer num1
+	Escribir 'ingresar segundo numero'Sin Saltar
+	Leer num2
+	Escribir 'ingrasar tercer numero'Sin Saltar
+	Leer num3
+	area <- num1*num2*num3
+	Escribir area
+FinAlgoritmo
 
